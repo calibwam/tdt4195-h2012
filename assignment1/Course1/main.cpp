@@ -10,9 +10,12 @@
 
 
 #include <stdio.h>     // - Just for some ASCII messages
+#include <stdlib.h>
+#include <time.h>
 #include "gl/glut.h"   // - An interface and windows 
                        //   management library
 #include "visuals.h"   // Header file for our OpenGL functions
+#include "assignment1.h"
 
 
 
@@ -23,6 +26,7 @@
 
 int main(int argc, char* argv[])
 { 
+  srand(time(NULL));
   // initialize GLUT library state
   glutInit(&argc, argv);
 	
@@ -49,7 +53,7 @@ int main(int argc, char* argv[])
   // Callbacks for the GL and GLUT events:
 
   // The rendering function 
-  glutDisplayFunc(Render);
+  glutDisplayFunc(A1Render);
   glutReshapeFunc(Resize);
  
   //Enter main event handling loop
